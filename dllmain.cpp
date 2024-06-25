@@ -1,5 +1,7 @@
 #include <Windows.h>
 #include <iostream>
+#include "SDK/SDK.hpp"
+#include "minihook/minhook.h"
 
 DWORD WINAPI InitSwagShit(LPVOID)
 {
@@ -9,6 +11,8 @@ DWORD WINAPI InitSwagShit(LPVOID)
     freopen_s(&fptr, "CONOUT$", "w+", stdout);
 
     SetConsoleTitleA("Mini FN");
+
+    MH_Initialize();
 
     return 0;
 }
